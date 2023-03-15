@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700;800&display=swap');
+
+*{
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 10%;
+}
+
+/*input-group*/
+.input-group{
+    margin-bottom: .75em;
+    display: flex;
+    flex-direction: column;
+}
+.input-group.top{
+    margin-bottom: 2em;
+}
+.input-group label{
+    font-size: 1.15em;
+    margin-bottom: .35em;
+}
+.input-group input{
+    padding: .75em 1em;
+    font-size: 1.1em;
+    outline: none;
+    border-radius: .5em;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+}
+.input-group input:disabled{
+    background: rgba(0, 0, 0, 0.1);
+    cursor: no-drop;
+}
+
+
+/*search*/
+.search{
+    width: 100%;
+    position: relative;
+}
+#res{
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    display: none;
+    position: absolute;
+    top: 5.5em;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: .5em;
+    background: white;
+    z-index: 10;
+    padding: 5px;
+
+    flex-direction: column;
+}
+#res h3{
+    font-size: 1.25em;
+    padding: 1em;
+}
+#res div{
+    border-radius: inherit;
+    background: rgba(0, 0, 0, 0.05);
+    padding: .75em;
+    margin-bottom: 3px;
+    transition: .15s;
+}
+#res div:hover{
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.125);
+}
+#res div:last-child{
+    margin-bottom: 0;
+}
+#res div p,
+#res div h5{
+    margin: 0;
+}
+
+/*media*/
+@media (max-width: 450px) {
+    body{
+        padding: 10% 3%;
+    }
+    .input-group input{
+        font-size: .9em;
+    }
+    #res{
+        top: 4.5em;
+    }
+    #res h3{
+        font-size: 1.05em;
+        padding: .5em;
+    }
+    .input-group label{
+        font-size: .95em;
+        margin-bottom: .35em;
+    }
+}
